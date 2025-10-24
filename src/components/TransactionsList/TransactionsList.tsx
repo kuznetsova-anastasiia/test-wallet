@@ -42,19 +42,37 @@ export default function TransactionsList() {
     return iconMap[company] || faStore;
   };
 
+  const getRandomDarkBackground = (company: string): string => {
+    // Use company name as seed for consistent colors per company
+    const seed = company.split("").reduce((a, b) => {
+      a = (a << 5) - a + b.charCodeAt(0);
+      return a & a;
+    }, 0);
+
+    // Generate consistent dark colors based on company name
+    const hue = Math.abs(seed) % 360;
+    const saturation = 60 + (Math.abs(seed) % 30); // 60-90%
+    const lightness = 25 + (Math.abs(seed) % 15); // 25-40% (dark)
+
+    return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+  };
+
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     const now = new Date();
     const diffTime = Math.abs(now.getTime() - date.getTime());
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-    if (diffDays === 1) return "Yesterday";
-    if (diffDays === 2) return "Tuesday";
-    if (diffDays <= 7) return `${diffDays} days ago`;
+    // For the last week (7 days or less): display the day name
+    if (diffDays <= 7) {
+      return date.toLocaleDateString("en-US", { weekday: "long" });
+    }
+
+    // For older entries: display the date
     return date.toLocaleDateString("en-US", {
       month: "numeric",
       day: "numeric",
-      year: "2-digit",
+      year: "numeric",
     });
   };
 
@@ -87,7 +105,14 @@ export default function TransactionsList() {
             className="TransactionsList__item"
             onClick={() => handleTransactionClick(transaction.id)}
           >
-            <div className="TransactionsList__icon">
+            <div
+              className="TransactionsList__icon"
+              style={{
+                backgroundColor: getRandomDarkBackground(
+                  transaction.company || "Store"
+                ),
+              }}
+            >
               <FontAwesomeIcon icon={getIcon(transaction.company || "Store")} />
             </div>
             <div className="TransactionsList__details">
