@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "date": "2025-10-24 12:00:00",
+    "amount": 12.4,
+    "type": "payment",
+    "status": "approved",
+    "user": "John Doe",
+    "description": "From John Doe"
+  },
+  {
+    "id": 2,
+    "date": "2025-10-24 12:34:00",
+    "amount": 90.23,
+    "type": "credit",
+    "status": "pending",
+    "description": "Monthly payment",
+    "company": "IKEA",
+    "icon": "fa-store"
+  },
+  {
+    "id": 3,
+    "date": "2025-10-23 09:15:00",
+    "amount": 45.67,
+    "type": "debit",
+    "status": "approved",
+    "description": "Coffee & Breakfast",
+    "company": "Starbucks",
+    "icon": "fa-coffee"
+  },
+  {
+    "id": 4,
+    "date": "2025-10-20 14:22:00",
+    "amount": 156.89,
+    "type": "debit",
+    "status": "approved",
+    "description": "Grocery Shopping",
+    "company": "Whole Foods",
+    "icon": "fa-shopping-cart"
+  },
+  {
+    "id": 5,
+    "date": "2025-10-05 18:45:00",
+    "amount": 23.5,
+    "type": "debit",
+    "status": "approved",
+    "description": "Ride Share",
+    "company": "Uber",
+    "icon": "fa-car"
+  },
+  {
+    "id": 6,
+    "date": "2025-10-06 11:30:00",
+    "amount": 89.99,
+    "type": "debit",
+    "status": "pending",
+    "description": "Online Purchase",
+    "company": "Amazon",
+    "icon": "fa-shopping-bag"
+  },
+  {
+    "id": 7,
+    "date": "2025-09-27 16:20:00",
+    "amount": 67.45,
+    "type": "debit",
+    "status": "approved",
+    "description": "Gas Station",
+    "company": "Shell",
+    "icon": "fa-gas-pump"
+  },
+  {
+    "id": 8,
+    "date": "2025-09-08 20:10:00",
+    "amount": 34.78,
+    "type": "debit",
+    "status": "approved",
+    "description": "Restaurant Dinner",
+    "company": "McDonald's",
+    "icon": "fa-utensils"
+  },
+  {
+    "id": 9,
+    "date": "2025-01-09 13:55:00",
+    "amount": 125.0,
+    "type": "credit",
+    "status": "approved",
+    "description": "Salary Deposit",
+    "company": "Employer",
+    "icon": "fa-building"
+  },
+  {
+    "id": 10,
+    "date": "2025-01-10 10:15:00",
+    "amount": 78.9,
+    "type": "debit",
+    "status": "approved",
+    "description": "Pharmacy",
+    "company": "CVS",
+    "icon": "fa-pills"
+  }
+]
